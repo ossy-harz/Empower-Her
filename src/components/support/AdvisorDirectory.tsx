@@ -9,11 +9,13 @@ import { Search, Filter, X } from "lucide-react";
 interface AdvisorDirectoryProps {
   onSchedule?: (advisor: Advisor) => void;
   onMessage?: (advisor: Advisor) => void;
+  onSelectAdvisor?: (advisor: Advisor) => void;
 }
 
 export default function AdvisorDirectory({
   onSchedule,
   onMessage,
+  onSelectAdvisor,
 }: AdvisorDirectoryProps) {
   const [advisors, setAdvisors] = useState<Advisor[]>([]);
   const [filteredAdvisors, setFilteredAdvisors] = useState<Advisor[]>([]);
@@ -214,6 +216,7 @@ export default function AdvisorDirectory({
                   advisor={advisor}
                   onSchedule={onSchedule}
                   onMessage={onMessage}
+                  onSelectAdvisor={onSelectAdvisor}
                 />
               ))}
             </div>
