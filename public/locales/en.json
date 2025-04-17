@@ -1,0 +1,123 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "submit": "Submit",
+    "next": "Next",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "createAccount": "Create Account"
+  },
+  "navigation": {
+    "home": "Home",
+    "reports": "Reports",
+    "support": "Support",
+    "opportunities": "Opportunities",
+    "community": "Community",
+    "settings": "Settings",
+    "profile": "Profile"
+  },
+  "reporting": {
+    "title": "Secure Reporting",
+    "newReport": "Create New Report",
+    "myReports": "My Reports",
+    "reportDetails": "Report Details",
+    "dashboard": "Dashboard",
+    "form": {
+      "title": "Submit a Secure Report",
+      "description": "Your information is encrypted and protected. You can choose to remain anonymous.",
+      "step": "Step {{current}} of {{total}}",
+      "complete": "{{percent}}% Complete",
+      "incidentType": "Incident Type",
+      "incidentTypeDescription": "Select the category that best describes the incident.",
+      "incidentDate": "Date of Incident",
+      "incidentDateDescription": "When did this incident occur?",
+      "description": "Description",
+      "descriptionPlaceholder": "Please describe what happened in detail...",
+      "descriptionHelp": "Provide as much detail as possible about the incident.",
+      "evidence": "Add Evidence (Optional)",
+      "evidenceDescription": "Upload photos, videos, or documents related to the incident.",
+      "selectFiles": "Select Files",
+      "uploadedFiles": "Uploaded Files ({{count}})",
+      "privacyProtected": "Your privacy is protected",
+      "privacyDescription": "All uploaded files are encrypted and stored securely. Only authorized personnel can access them.",
+      "location": "Location Description",
+      "locationPlaceholder": "Enter the location where the incident occurred",
+      "locationDescription": "Provide a description of where this happened (e.g., district, city, landmark).",
+      "enableLocation": "Enable Precise Location",
+      "enableLocationDescription": "Allow the app to capture your exact GPS coordinates.",
+      "locationActive": "Location services active",
+      "locationActiveDescription": "Your precise location will be securely attached to this report.",
+      "reviewReport": "Review Your Report",
+      "anonymous": "Submit Anonymously",
+      "anonymousTooltip": "Anonymous reports don't include your personal information, but you won't receive updates.",
+      "identityHidden": "Your identity will be hidden",
+      "receiveUpdates": "You'll receive updates on your report",
+      "contactInfo": "Contact Information (Optional)",
+      "contactDescription": "Provide your contact details to receive updates about your report.",
+      "contactEmail": "Email",
+      "contactPhone": "Phone Number",
+      "submitting": "Submitting...",
+      "submitReport": "Submit Report"
+    },
+    "success": {
+      "title": "Report Submitted Successfully",
+      "description": "Thank you for your report. It has been submitted securely.",
+      "trackingNumber": "Your report has been assigned a tracking number:",
+      "anonymousMessage": "You've submitted this report anonymously. You can track its status using the tracking number above.",
+      "contactMessage": "You will receive updates about your report via the contact information you provided.",
+      "submitAnother": "Submit Another Report"
+    },
+    "status": {
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "resolved": "Resolved",
+      "rejected": "Rejected"
+    },
+    "types": {
+      "harassment": "Harassment",
+      "censorship": "Censorship",
+      "digitalSecurity": "Digital Security Breach",
+      "rightsViolation": "Rights Violation",
+      "other": "Other"
+    },
+    "list": {
+      "title": "My Reports",
+      "description": "View and manage your submitted reports",
+      "search": "Search reports...",
+      "noReports": "No reports found. Try adjusting your filters or create a new report.",
+      "columns": {
+        "title": "Title",
+        "type": "Type",
+        "date": "Date",
+        "status": "Status",
+        "progress": "Progress",
+        "actions": "Actions"
+      },
+      "actions": {
+        "viewDetails": "View Details",
+        "download": "Download Report",
+        "share": "Share Report"
+      },
+      "filters": {
+        "allStatuses": "All Statuses",
+        "allTypes": "All Types"
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/card";
 import { BookOpen, MessageSquare, FileText } from "lucide-react";
 import ELearningModules from "./ELearningModules";
+import CommunityForums from "./CommunityForums";
+import UserGeneratedContent from "./UserGeneratedContent";
 
 export default function CommunityLearningPortal() {
   const [activeTab, setActiveTab] = useState("courses");
@@ -60,47 +62,11 @@ export default function CommunityLearningPortal() {
           </TabsContent>
 
           <TabsContent value="forums" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Community Forums</CardTitle>
-                <CardDescription>
-                  Connect with other users, ask questions, and share your
-                  experiences.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center py-12">
-                  <MessageSquare className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                  <h3 className="text-lg font-medium mb-2">Coming Soon</h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    We're working on implementing community forums. Check back
-                    soon!
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <CommunityForums />
           </TabsContent>
 
           <TabsContent value="content" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>User-Generated Content</CardTitle>
-                <CardDescription>
-                  Share your knowledge and learn from others through
-                  user-generated content.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="text-center py-12">
-                  <FileText className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
-                  <h3 className="text-lg font-medium mb-2">Coming Soon</h3>
-                  <p className="text-muted-foreground max-w-md mx-auto">
-                    We're working on implementing user-generated content. Check
-                    back soon!
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+            <UserGeneratedContent />
           </TabsContent>
         </Tabs>
       </main>

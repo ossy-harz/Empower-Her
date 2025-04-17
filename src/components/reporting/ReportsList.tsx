@@ -46,7 +46,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Progress } from "@/components/ui/progress";
-import { getAllReports, Report } from "@/lib/data/reports";
+import { getUserReports } from "@/lib/api/reports";
+import { Report } from "@/lib/api/reports";
 
 const ReportsList = () => {
   const [reports, setReports] = useState<Report[]>([]);
@@ -54,18 +55,28 @@ const ReportsList = () => {
 
   // Load reports on component mount
   useEffect(() => {
-    const loadReports = () => {
-      const allReports = getAllReports();
-      setReports(allReports);
+    const loadReports = async () => {
+      try {
+        const { reports: userReports, error } = await getUserReports();
+        if (error) {
+          console.error("Error loading reports:", error);
+          return;
+        }
+        setReports(userReports);
+      } catch (error) {
+        console.error("Error loading reports:", error);
+      }
     };
 
     loadReports();
 
-    // In a real app, we would set up a subscription or polling mechanism
-    // to keep the reports list updated
-    const intervalId = setInterval(loadReports, 30000);
+    // Set up a polling mechanism instead of realtime subscription
+    // This is more reliable when the Supabase client might not be fully initialized
+    const intervalId = setInterval(loadReports, 10000); // Poll every 10 seconds
 
-    return () => clearInterval(intervalId);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");

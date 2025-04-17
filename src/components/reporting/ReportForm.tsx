@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -52,7 +53,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
-import { addReport, FormValues } from "@/lib/data/reports";
+import { createReport, FormValues } from "@/lib/api/reports";
 
 // Form schema validation
 const formSchema = z.object({
@@ -79,6 +80,7 @@ interface ReportFormProps {
 }
 
 const ReportForm = ({ onSubmitSuccess = () => {} }: ReportFormProps) => {
+  const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -134,18 +136,20 @@ const ReportForm = ({ onSubmitSuccess = () => {} }: ReportFormProps) => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call latency
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Create the report in the database
+      const { report, error } = await createReport(data, mediaFiles);
 
-      // Add the report to our data store
-      const newReport = addReport(data, mediaFiles);
-      console.log("Report submitted:", newReport);
+      if (error) {
+        console.error("Error submitting report:", error);
+        throw error;
+      }
+
+      console.log("Report submitted:", report);
 
       setIsSubmitted(true);
       onSubmitSuccess(data);
 
-      // In a real app with proper auth, we would redirect to the user's reports
-      // after a delay to show the success message
+      // Redirect to the user's reports after a delay to show the success message
       setTimeout(() => {
         navigate("/reports");
       }, 3000);
@@ -201,17 +205,21 @@ const ReportForm = ({ onSubmitSuccess = () => {} }: ReportFormProps) => {
   return (
     <Card className="w-full max-w-3xl mx-auto bg-white">
       <CardHeader>
-        <CardTitle>Submit a Secure Report</CardTitle>
-        <CardDescription>
-          Your information is encrypted and protected. You can choose to remain
-          anonymous.
-        </CardDescription>
+        <CardTitle>{t("reporting.form.title")}</CardTitle>
+        <CardDescription>{t("reporting.form.description")}</CardDescription>
         <Progress value={progressValue} className="mt-2" />
         <div className="flex justify-between text-xs text-gray-500 mt-1">
           <span>
-            Step {currentStep} of {totalSteps}
+            {t("reporting.form.step", {
+              current: currentStep,
+              total: totalSteps,
+            })}
           </span>
-          <span>{Math.round(progressValue)}% Complete</span>
+          <span>
+            {t("reporting.form.complete", {
+              percent: Math.round(progressValue),
+            })}
+          </span>
         </div>
       </CardHeader>
 
@@ -232,30 +240,38 @@ const ReportForm = ({ onSubmitSuccess = () => {} }: ReportFormProps) => {
                   name="incidentType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Incident Type</FormLabel>
+                      <FormLabel>{t("reporting.form.incidentType")}</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Select incident type" />
+                            <SelectValue
+                              placeholder={t("reporting.form.incidentType")}
+                            />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="harassment">Harassment</SelectItem>
-                          <SelectItem value="censorship">Censorship</SelectItem>
+                          <SelectItem value="harassment">
+                            {t("reporting.types.harassment")}
+                          </SelectItem>
+                          <SelectItem value="censorship">
+                            {t("reporting.types.censorship")}
+                          </SelectItem>
                           <SelectItem value="digital_security">
-                            Digital Security Breach
+                            {t("reporting.types.digitalSecurity")}
                           </SelectItem>
                           <SelectItem value="rights_violation">
-                            Rights Violation
+                            {t("reporting.types.rightsViolation")}
                           </SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="other">
+                            {t("reporting.types.other")}
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                       <FormDescription>
-                        Select the category that best describes the incident.
+                        {t("reporting.form.incidentTypeDescription")}
                       </FormDescription>
                       <FormMessage />
                     </FormItem>

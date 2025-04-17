@@ -1,0 +1,123 @@
+{
+  "common": {
+    "loading": "Tulinda...",
+    "error": "Waliwo ensobi",
+    "save": "Tereka",
+    "cancel": "Sazaamu",
+    "delete": "Gyawo",
+    "edit": "Kyusa",
+    "view": "Laba",
+    "submit": "Waayo",
+    "next": "Ddako",
+    "back": "Ddayo",
+    "yes": "Yee",
+    "no": "Nedda"
+  },
+  "auth": {
+    "login": "Yingira",
+    "register": "Wewandiise",
+    "logout": "Fuluma",
+    "email": "Email",
+    "password": "Pasiwadi",
+    "forgotPassword": "Weerabidde Pasiwadi?",
+    "resetPassword": "Ddamu Pasiwadi",
+    "createAccount": "Kola Akawunti"
+  },
+  "navigation": {
+    "home": "Awaka",
+    "reports": "Alipoota",
+    "support": "Obuyambi",
+    "opportunities": "Emikisa",
+    "community": "Ekitundu",
+    "settings": "Entegeka",
+    "profile": "Ebikukwatako"
+  },
+  "reporting": {
+    "title": "Alipoota Etegekedwa",
+    "newReport": "Kola Alipoota Empya",
+    "myReports": "Alipoota Zange",
+    "reportDetails": "Ebikwata ku Alipoota",
+    "dashboard": "Ekiwandiiko",
+    "form": {
+      "title": "Waayo Alipoota Etegekedwa",
+      "description": "Ebikukwatako bikuumibwa bulungi. Osobola okulonda obutamanyisa bikukwatako.",
+      "step": "Mutendera {{current}} ku {{total}}",
+      "complete": "{{percent}}% Etuuse",
+      "incidentType": "Ekika ky'Ekyabaawo",
+      "incidentTypeDescription": "Londa ekika ekinnyonnyola obulungi ekyabaawo.",
+      "incidentDate": "Ennaku Ekyabaawo",
+      "incidentDateDescription": "Ekyabaawo ddi?",
+      "description": "Okunnyonnyola",
+      "descriptionPlaceholder": "Nnyonnyola mu bujjuvu ekyabaawo...",
+      "descriptionHelp": "Wa ebikwata ku kyabaawo mu bujjuvu nga bwe kisoboka.",
+      "evidence": "Yongerako Obujulizi (Ssi Kyateeka)",
+      "evidenceDescription": "Waayo bifaananyi, vidiyo, oba ebiwandiiko ebikwata ku kyabaawo.",
+      "selectFiles": "Londa Fayiro",
+      "uploadedFiles": "Fayiro Eziweereddwa ({{count}})",
+      "privacyProtected": "Ebikukwatako bikuumibwa",
+      "privacyDescription": "Fayiro zonna zikuumibwa bulungi. Abantu abakkirizibwa bokka be basobola okuziraba.",
+      "location": "Okunnyonnyola Ekifo",
+      "locationPlaceholder": "Wandiika ekifo ekyabaawo",
+      "locationDescription": "Wa ebikwata ku kifo ekyabaawo (okugeza, ekitundu, ekibuga, ekifo ekimanyiddwa).",
+      "enableLocation": "Kkiriza Okumanya Ekifo Kyennyini",
+      "enableLocationDescription": "Kkiriza app okukwata ekifo kyo kyennyini.",
+      "locationActive": "Okumanya ekifo kukola",
+      "locationActiveDescription": "Ekifo kyo kyennyini kijja kugattibwa ku alipoota eno.",
+      "reviewReport": "Kebera Alipoota Yo",
+      "anonymous": "Waayo nga Tomanyiddwa",
+      "anonymousTooltip": "Alipoota ezitamanyisa bikukwatako teziriko bikukwatako, naye tojja kufuna bubaka bwa nkyukakyuka.",
+      "identityHidden": "Ebikukwatako bijja kukuumibwa",
+      "receiveUpdates": "Ojja kufuna bubaka ku alipoota yo",
+      "contactInfo": "Ebikukwatako (Ssi Kyateeka)",
+      "contactDescription": "Wa ebikukwatako okusobola okufuna bubaka ku alipoota yo.",
+      "contactEmail": "Email",
+      "contactPhone": "Ennamba y'Essimu",
+      "submitting": "Tuweereza...",
+      "submitReport": "Waayo Alipoota"
+    },
+    "success": {
+      "title": "Alipoota Eweereddwa Bulungi",
+      "description": "Webale alipoota yo. Eweereddwa bulungi.",
+      "trackingNumber": "Alipoota yo eweeredwa ennamba y'okugoberera:",
+      "anonymousMessage": "Owaddeyo alipoota nga tomanyiddwa. Osobola okugoberera embeera yaayo ng'okozesa ennamba y'okugoberera waggulu.",
+      "contactMessage": "Ojja kufuna bubaka ku alipoota yo ng'oyita mu bikukwatako bye wawaddeyo.",
+      "submitAnother": "Waayo Alipoota Endala"
+    },
+    "status": {
+      "pending": "Ekyetegerezebwa",
+      "inProgress": "Ekolebwako",
+      "resolved": "Eggiddwawo",
+      "rejected": "Egaaniddwa"
+    },
+    "types": {
+      "harassment": "Okutulugunya",
+      "censorship": "Okuziyiza Eddembe ly'Okwogera",
+      "digitalSecurity": "Okunyigiriza Obukuumi bw'Ebya Tekinologiya",
+      "rightsViolation": "Okunyigiriza Eddembe",
+      "other": "Ebirala"
+    },
+    "list": {
+      "title": "Alipoota Zange",
+      "description": "Laba era kulakulanya alipoota zo",
+      "search": "Noonya alipoota...",
+      "noReports": "Tewali alipoota zizuuliddwa. Gezaako okukyusa ebisengejja oba kola alipoota empya.",
+      "columns": {
+        "title": "Omutwe",
+        "type": "Ekika",
+        "date": "Ennaku",
+        "status": "Embeera",
+        "progress": "Enkulaakulana",
+        "actions": "Ebikolwa"
+      },
+      "actions": {
+        "viewDetails": "Laba Ebikwata",
+        "download": "Wanula Alipoota",
+        "share": "Gabanako Alipoota"
+      },
+      "filters": {
+        "allStatuses": "Embeera Zonna",
+        "allTypes": "Ebika Byonna"
+      }
+    }
+  }
+}

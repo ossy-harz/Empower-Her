@@ -1,0 +1,23 @@
+{
+  "name": "Digital Empowerment Platform for Ugandan Women",
+  "short_name": "Empower",
+  "description": "A comprehensive platform designed to empower Ugandan women through secure reporting, professional support, and economic opportunities",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
